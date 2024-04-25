@@ -87,7 +87,7 @@ class ChildWidget extends StatelessWidget {
   }
 }
 ```
-4. I error thrown : 
+4. If error thrown : 
 ```bash
 Error while trying to load an asset: Flutter Web engine failed to fetch "assets/assets/img3.png". HTTP request succeeded, but  
 the server responded with HTTP status 404.
