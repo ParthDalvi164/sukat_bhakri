@@ -1,4 +1,4 @@
-# From_widget
+# Form_widget
 1. Add the following code to main.dart : 
 ```dart
 import 'package:flutter/material.dart';
