@@ -9,7 +9,7 @@ flutter:
     - assets/img2.png
     - assets/img3.png
 ```
-3. main.dart code for column widget (For row replace child element name to "Row()") : 
+3. main.dart code for <b>column widget<b> (For row replace child element name to "Row()") : 
 ```dart
 import 'package:flutter/material.dart';
 
