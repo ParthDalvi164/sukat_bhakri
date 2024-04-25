@@ -30,13 +30,12 @@ if('serviceWorker' in navigator) {
     })
 }
 ```
-6. Modifications in HTML file : <br>
-  inside head :
+6. Modifications in HTML file : <br>(inside head)
   ```html
   <link rel="manifest" href="/site.webmanifest">
   <link rel="service" href="/sw.js">
   ```
-  inside body : 
+7. inside body : 
   ```html
   <script src="sw.js"></script>
   ```
