@@ -5,6 +5,7 @@
 import 'package:device_preview/device_preview.dart'; 
 ```
 ```dart
+// Update in pubspec.yaml
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -12,6 +13,7 @@ dev_dependencies:
   device_preview: ^0.7.5
 ```
 ```dart
+// Replace void main() of any code with the below one 
 void main() {
   runApp(
     DevicePreview(
