@@ -1,0 +1,102 @@
+# Layout_widgets
+
+1. create "assets" folder and add images in it
+2. add the asset's details in pubspec.yaml : 
+```dart
+flutter:
+  assets:
+    - assets/img1.png
+    - assets/img2.png
+    - assets/img3.png
+```
+3. main.dart code for column widget (For row replace child element name to "Row()") : 
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Layout Demo',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Layout Demo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ChildWidget(
+              imagePath: 'assets/img1.png',
+              text: 'Flutter',
+            ),
+            SizedBox(height: 20),
+            ChildWidget(
+              imagePath: 'assets/img2.png',
+              text: 'Dart',
+            ),
+            SizedBox(height: 20),
+            ChildWidget(
+              imagePath: 'assets/img3.png',
+              text: 'Material',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ChildWidget extends StatelessWidget {
+  final String imagePath;
+  final String text;
+
+  const ChildWidget({
+    Key? key,
+    required this.imagePath,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 50,
+          backgroundImage: AssetImage(imagePath),
+        ),
+        SizedBox(height: 10),
+        Text(
+          text,
+          style: TextStyle(fontSize: 18),
+        ),
+      ],
+    );
+  }
+}
+```
+4. I error thrown : 
+```bash
+Error while trying to load an asset: Flutter Web engine failed to fetch "assets/assets/img3.png". HTTP request succeeded, but  
+the server responded with HTTP status 404.
+```
+5. Run(in terminal) : 
+```bash
+flutter build web --web-renderer html --release
+```
+6. Re-run flutter run : 
+```bash
+flutter run
+``` 
